@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import CommentItem from './CommentItem';
 
 export class CommentList extends Component {
+    static propTypes = {
+        comments: PropTypes.array
+    }
+
     static defaultProps = {
         comments: []
       }
