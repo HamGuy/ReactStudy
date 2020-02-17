@@ -4,7 +4,8 @@ import CommentItem from './CommentItem';
 
 export class CommentList extends Component {
     static propTypes = {
-        comments: PropTypes.array
+        comments: PropTypes.array,
+        onDeleteComment: PropTypes.func
     }
 
     static defaultProps = {
@@ -14,7 +15,7 @@ export class CommentList extends Component {
     render() {
         const {comments} = this.props;
         return (
-        <div> { comments.map((comment, i)=> <CommentItem key={i} comment={comment}/>) }</div>
+        <div> { comments.map((comment, i)=> <CommentItem key={i} index ={i} onDeleteComment={this.props.onDeleteComment} comment={comment}/>) }</div>
         )
     }
 }
